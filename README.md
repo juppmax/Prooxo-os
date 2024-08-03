@@ -7,11 +7,11 @@ Follow the [os-series tutorial](https://github.com/davidcallanan/os-series) by D
 
 ## Installation and Building of the Docker image
 Build the image:
- - docker build buildenv -t myos-buildenv
+ - 'docker build buildenv -t myos-buildenv'
 
 Running it on windows:
 To run the Docker container in the CMD you have to run: 
- - docker run --rm -it -v "%cd%":/root/env myos-buildenv
+ - 'docker run --rm -it -v "%cd%":/root/env myos-buildenv'
  
 For Powershell you need to run:
  - docker run --rm -it -v "${pwd}:/root/env" myos-buildenv
