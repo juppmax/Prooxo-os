@@ -24,11 +24,17 @@ for systems using systemd:
 - `systemctl enable docker`
 - `systemctl run docker` <br>
 for windows just open the docker app and let it run in the background
+
+## Compiling of the Kernel
+To build the Kernel start the Docker container and run:
+- `make build-x86_64`
 ## Emulate
 We Develop the operating system using Qemu as our emulator
 Use this command to emulate the OS:   
  - `qemu-system-x86_64 -cdrom dist/x86_64/kernel.iso`
- 
+
+note: Close the emulator befor compiling again to prevent errors
+
 You can also write the OS to an USB to run it from live Hardware (Not tested yet)
 
 ## Cleanup
