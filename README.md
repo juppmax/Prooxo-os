@@ -21,8 +21,8 @@ Running it on Linux:
 
 note: You have to have the Docker deamon running for both windows and linux,
 for systems using systemd:
-- systemctl enable docker
-- systemctl run docker
+- `systemctl enable docker`
+- `systemctl run docker`
 for windows just open the docker app and let it run in the background
 ## Emulate
 We Develop the operating system using Qemu as our emulator
