@@ -1,5 +1,5 @@
 ## Prooxo OS is a simple OS based of davidcallanan's os-series
-Follow the [os-series tutorial](https://github.com/davidcallanan/os-series) by David Callanan to build a simple operating system.
+based of the [os-series tutorial](https://github.com/davidcallanan/os-series) by David Callanan.
 
 ## Prerequisites
 - [Docker](https://www.docker.com/get-started)
