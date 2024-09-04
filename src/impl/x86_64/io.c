@@ -82,4 +82,26 @@ static inline uint64_t rdtsc(){
     return ret;
 }
 
-//TO-DO Read the value in a control register.
+//Read the value in a control register.
+static inline unsigned long read_cr0(void){
+    unsigned long val;
+    asm volatile ( "mov %%cr0, %0" : "=r"(val) );
+    return val;
+}
+
+//Invalidates the TLB (Translation Lookaside Buffer) for one specific virtual address
+static inline void invlpg(void* m){
+    /* Clobber memory to avoid optimizer re-ordering access before invlpg, which may cause nasty bugs. */
+    asm volatile ( "invlpg (%0)" : : "b"(m) : "memory" );
+}
+
+//Write a 64-bit value to a MSR
+static inline void wrmsr(uint64_t msr, uint64_t value){
+    uint32_t low = value & 0xFFFFFFFF;
+    uint32_t high = value >> 32;
+    asm volatile (
+        "wrmsr"
+        :
+        : "c"(msr), "a"(low), "d"(high)
+    );
+}
